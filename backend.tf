@@ -15,7 +15,7 @@ terraform {
     organization = "Jaypee-prod"
 
     workspaces {
-      name = "terraform-cloud"
+      name = "terraform-pbl-19"
     }
   }
 }
