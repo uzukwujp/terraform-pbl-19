@@ -29,7 +29,7 @@ resource "aws_instance" "sonbarqube" {
    tags = merge(
     var.tags,
     {
-      Name = "JAY-sonbarqube"
+      Name = "JAY-sonarqube"
     },
   )
 }

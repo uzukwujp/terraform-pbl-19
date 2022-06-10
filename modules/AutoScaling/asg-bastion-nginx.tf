@@ -32,7 +32,7 @@ resource "random_shuffle" "az_list" {
   input        = data.aws_availability_zones.available.names
 }
 
-resource "aws_launch_template" "bastion-launch-template" {
+resource "aws_launch_template" "JAY-bastion" {
   image_id               = var.ami-bastion
   instance_type          = "t2.micro"
   vpc_security_group_ids = var.bastion-sg
@@ -78,12 +78,12 @@ resource "aws_autoscaling_group" "bastion-asg" {
   vpc_zone_identifier = var.public_subnets
 
   launch_template {
-    id      = aws_launch_template.bastion-launch-template.id
+    id      = aws_launch_template.JAY-bastion.id
     version = "$Latest"
   }
   tag {
     key                 = "Name"
-    value               = "bastion-launch-template"
+    value               = "JAY-bastion"
     propagate_at_launch = true
   }
 
@@ -91,7 +91,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
 
 # launch template for nginx
 
-resource "aws_launch_template" "nginx-launch-template" {
+resource "aws_launch_template" "JAY-nginx" {
   image_id               = var.ami-nginx
   instance_type          = "t2.micro"
   vpc_security_group_ids = var.nginx-sg
@@ -137,13 +137,13 @@ resource "aws_autoscaling_group" "nginx-asg" {
   vpc_zone_identifier = var.public_subnets
 
   launch_template {
-    id      = aws_launch_template.nginx-launch-template.id
+    id      = aws_launch_template.JAY-nginx.id
     version = "$Latest"
   }
 
   tag {
     key                 = "Name"
-    value               = "nginx-launch-template"
+    value               = "JAY-nginx"
     propagate_at_launch = true
   }
 
