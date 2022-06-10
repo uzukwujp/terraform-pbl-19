@@ -32,7 +32,7 @@ resource "aws_efs_file_system" "ACS-efs" {
   tags = merge(
     var.tags,
     {
-      Name = "ACS-efs"
+      Name = "JAY-efs"
     },
   )
 }

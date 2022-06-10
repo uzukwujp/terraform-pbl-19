@@ -9,7 +9,7 @@ resource "aws_lb" "ext-alb" {
    tags = merge(
     var.tags,
     {
-      Name = "ACS-ext-alb"
+      Name = "JAY-ext-alb"
     },
   )
 
@@ -63,7 +63,7 @@ resource "aws_lb" "ialb" {
   tags = merge(
     var.tags,
     {
-      Name = "ACS-int-alb"
+      Name = "JAY-int-alb"
     },
   )
 
