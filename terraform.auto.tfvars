@@ -25,7 +25,7 @@ environment = "production"
 
 ami-web = "ami-012b8ab199263eb6b"
 
-ami-nginx = "ami-06921bea82ac53a6a"
+ami-nginx = " ami-0516db5bd53b5f43d"
 ami-bastion = "ami-037123994e4da4790"
 
 ami-sonar = "ami-03761ebcfe9c1312b"

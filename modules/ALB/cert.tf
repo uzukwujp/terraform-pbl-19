@@ -40,24 +40,17 @@ resource "aws_acm_certificate_validation" "blogsite" {
 resource "aws_route53_record" "tooling" {
   zone_id = data.aws_route53_zone.blogsite.zone_id
   name    = "tooling.blogsite.live"
-  type    = "A"
-
-  alias {
-    name                   = aws_lb.ext-alb.dns_name
-    zone_id                = aws_lb.ext-alb.zone_id
-    evaluate_target_health = true
-  }
+  type    = "CNAME"
+  ttl     =  "60"
+  records =  [aws_lb.ext-alb.dns_name]
 }
 
 # create records for wordpress
 resource "aws_route53_record" "wordpress" {
   zone_id = data.aws_route53_zone.blogsite.zone_id
   name    = "wordpress.blogsite.live"
-  type    = "A"
-
-  alias {
-    name                   = aws_lb.ext-alb.dns_name
-    zone_id                = aws_lb.ext-alb.zone_id
-    evaluate_target_health = true
-  }
+  type    = "CNAME"
+  ttl     = "60"
+  records = [aws_lb.ext-alb.dns_name]
 }
+
