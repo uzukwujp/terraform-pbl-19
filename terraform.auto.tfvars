@@ -23,7 +23,7 @@ tags = {
 
 environment = "production"
 
-ami-web = "ami-00afc20d43826b79c"
+ami-web = "ami-012b8ab199263eb6b"
 
 ami-nginx = "ami-06921bea82ac53a6a"
 ami-bastion = "ami-037123994e4da4790"
