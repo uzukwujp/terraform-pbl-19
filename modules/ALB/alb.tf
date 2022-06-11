@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "nginx-tgt" {
 }
 
 
-#resource "aws_lb_listener" "nginx-listner" {
+resource "aws_lb_listener" "nginx-listner" {
   load_balancer_arn = aws_lb.ext-alb.arn
   port              = 443
   protocol          = "HTTPS"
@@ -114,7 +114,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
 # For this aspect a single listener was created for the wordpress which is default,
 # A rule was created to route traffic to tooling when the host header changes
 
-#resource "aws_lb_listener" "web-listener" {
+resource "aws_lb_listener" "web-listener" {
   load_balancer_arn = aws_lb.ialb.arn
   port              = 443
   protocol          = "HTTPS"
@@ -128,7 +128,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
 
 # listener rule for tooling target
 
-#resource "aws_lb_listener_rule" "tooling-listener" {
+resource "aws_lb_listener_rule" "tooling-listener" {
   listener_arn = aws_lb_listener.web-listener.arn
   priority     = 99
 
