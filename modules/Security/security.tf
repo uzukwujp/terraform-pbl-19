@@ -5,7 +5,7 @@ resource "aws_security_group" "ext-alb-sg" {
   description = "Allow TLS inbound traffic"
 
   ingress {
-    description = "HTTP"
+    description = "HTTPS"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
